@@ -1,6 +1,8 @@
-name: Step 1 – Markdown challenge
+
+name: Step 1 – Unlock Markdown challenge
 
 on:
+  workflow_dispatch:
   issue_comment:
     types: [created]
 
@@ -16,48 +18,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Get comment
-        id: comment
+      - name: Read current step
+        id: step
         run: |
-          echo "comment<<EOF" >> $GITHUB_ENV
-          echo "${{ github.event.comment.body }}" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          STEP=$(cat .github/steps/-step.txt)
+          echo "step=$STEP" >> $GITHUB_OUTPUT
 
-      - name: Validate Markdown
+      - name: Check for 'ready' comment
+        if: ${{ steps.step.outputs.step == '0' }}
         env:
           COMMENT: ${{ github.event.comment.body }}
         run: |
-          MISSING=""
-          
-          # check for blockquote
-          if ! [[ "$COMMENT" =~ ^\> ]]; then
-            MISSING="$MISSING Blockquote (> )"
-          fi
-
-          # check for inline code
-          if ! [[ "$COMMENT" =~ \`[^`]+\` ]]; then
-            MISSING="$MISSING, Inline code (`)`"
-          fi
-
-          # check for emphasis
-          if ! [[ "$COMMENT" =~ _{2,3}[^_]+_{2,3} ]]; then
-            MISSING="$MISSING, Emphasis (__, ___)"
-          fi
-
-          if [ -n "$MISSING" ]; then
-            gh issue comment "${{ github.event.issue.number }}" \
-              --body "❌ Your Markdown is missing: $MISSING"
-            exit 0
-          fi
-
-          # Success
-          gh issue comment "${{ github.event.issue.number }}" \
-            --body "✅ Nice work! Your Markdown looks correct. Advancing to Step 2."
-
-          # Update step counter
-          echo "2" > .github/steps/-step.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git commit -am "Advance to step 2"
-          git push
+          COMMENT_LOWER=$(echo "$COMMENT" | tr '[:upper:]' '[:lower:]')
+          if [[ "$COMMENT_LOWER" == "ready" ]]; then
+            echo "✅ Learner is ready — advancing to Step 1"
+            
+            # Update issue body to Step 1 Markdown
+            gh issue edit "${{ github.event.issue.number }}" \
+              --body-file ".github/steps/step-1.md"
+            
+            # Update step counter
+            echo "1" > .github/steps/-step.txt
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git commit -am "Advance to Step 1"
+            git push
+          else
+            echo "❌ Comment does not match 'ready', ignoring"
 
