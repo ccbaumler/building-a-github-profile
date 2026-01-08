@@ -61,5 +61,3 @@ jobs:
           from_step: 0
           to_step: 1
           issue_number: 1
-          branch_name: main
-          base_branch_name: main
