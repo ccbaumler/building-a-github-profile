@@ -62,3 +62,4 @@ jobs:
           to_step: 1
           issue_number: ${{ github.event.issue.number }}
           branch_name: main
+          base_branch_name: main
