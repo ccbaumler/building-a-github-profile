@@ -10,7 +10,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 jobs:
@@ -18,7 +18,8 @@ jobs:
     name: Check current step number
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - id: get_step
         run: |
           echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
@@ -37,16 +38,26 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - with:
+          fetch-depth: 0
 
-      - name: Create welcome issue from markdown
+      - name: Create welcome issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          TITLE="👋 Welcome to the course"
+          TITLE="Lets learn markdown!"
           BODY_FILE=".github/steps/0-step-welcome.md"
 
           gh issue create \
             --repo "$REPO" \
             --title "$TITLE" \
             --body-file "$BODY_FILE" 
+
+      - name: Update to step 1
+        uses: skills/action-update-step@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 0
+          to_step: 1
+          branch_name: main
