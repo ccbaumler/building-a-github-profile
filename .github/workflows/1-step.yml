@@ -11,23 +11,36 @@ permissions:
   issues: write
 
 jobs:
-  step_1:
-    if: github.event.issue.pull_request == null
+  get_current_step:
+    name: Check current step number
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: get_step
+        run: |
+          echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
+    outputs:
+      current_step: ${{ steps.get_step.outputs.current_step }}
+
+  advance_to_step_1:
+    name: Advance to step 1
+    needs: get_current_step
+
+    if: >-
+      ${{ !github.event.repository.is_template
+          && needs.get_current_step.outputs.current_step == 1 }}
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Read current step
-        id: step
-        run: |
-          STEP=$(cat .github/steps/-step.txt)
-          echo "step=$STEP" >> $GITHUB_OUTPUT
-
-      - name: Check for 'ready' comment
-        if: ${{ steps.step.outputs.step == '0' }}
+      - name: Unlock markdown challenge
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
           COMMENT: ${{ github.event.comment.body }}
+
         run: |
           COMMENT_LOWER=$(echo "$COMMENT" | tr '[:upper:]' '[:lower:]')
           if [[ "$COMMENT_LOWER" == "ready" ]]; then
