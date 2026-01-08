@@ -44,7 +44,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           TITLE="👋 Welcome to the course"
-          BODY_FILE=".github/steps/step-0-welcome.md"
+          BODY_FILE=".github/steps/0-step-welcome.md"
 
           gh issue create \
             --repo "$REPO" \
