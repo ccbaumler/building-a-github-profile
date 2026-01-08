@@ -1,0 +1,70 @@
+name: Step 0 – Check
+
+on:
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  get_current_step:
+    name: Check current step number
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - id: get_step
+        run: |
+          echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
+    outputs:
+      current_step: ${{ steps.get_step.outputs.current_step }}
+
+  check_ready_status:
+    name: Advance to step 1
+    needs: get_current_step
+
+    if: >-
+      ${{ !github.event.repository.is_template
+          && needs.get_current_step.outputs.current_step == 0 }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Unlock markdown challenge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          COMMENT: ${{ github.event.comment.body }}
+
+        run: |
+          COMMENT_LOWER=$(echo "$COMMENT" | tr '[:upper:]' '[:lower:]')
+          if [[ "$COMMENT_LOWER" == "ready" ]]; then
+            echo "✅ Learner is ready — advancing to Step 1"
+            
+            # Update issue body to Step 1 Markdown
+            gh issue edit "${{ github.event.issue.number }}" \
+              --body-file ".github/steps/step-1.md"
+            
+            # Update step counter
+            echo "1" > .github/steps/-step.txt
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git commit -am "Advance to Step 1"
+            git push
+          else
+            echo "❌ Comment does not match 'ready', ignoring"
+
+      - name: Update to step 1
+        uses: ./.github/actions/action-update-step-in-issue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 0
+          to_step: 1
+          issue_number: ${{ github.event.issue.number }}

@@ -1,4 +1,4 @@
-name: Step 0, Welcome (Issue-based)
+name: Step Welcome (Issue-based)
 
 # This will run every time we create push a commit to `main`.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
@@ -53,11 +53,3 @@ jobs:
             --repo "$REPO" \
             --title "$TITLE" \
             --body-file "$BODY_FILE" 
-
-      - name: Update to step 1
-        uses: ./.github/actions/action-update-step-in-issue
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 0
-          to_step: 1
-          issue_number: 1
