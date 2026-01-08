@@ -62,10 +62,11 @@ jobs:
             echo "❌ Comment does not match 'ready', ignoring"
 
       - name: Update to step 2
-        uses: ./.github/actions/action-update-step
+        uses: ./.github/actions/action-update-step-in-issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 1
           to_step: 2
           issue_number: ${{ github.event.issue.number }}
           branch_name: main
+          base_branch_name: main

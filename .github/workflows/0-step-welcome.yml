@@ -55,7 +55,7 @@ jobs:
             --body-file "$BODY_FILE" 
 
       - name: Update to step 1
-        uses: ./.github/actions/action-update-step
+        uses: ./.github/actions/action-update-step-in-issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 0
