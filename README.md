@@ -1,31 +1,31 @@
-# (replace-me: Exercise title)
+# Building a GitHub Portfolio
 
-_(replace-me: One-line description of the exercise)_
+_Building a GitHub Portfolio in less than an hour._
 
 ## Welcome
 
-- **Who is this for**: (replace-me: Target audience description)
-- **What you'll learn**: (replace-me: Learning objectives)
-- **What you'll build**: (replace-me: Description of what the learner will create)
-- **Prerequisites**:
-  - (replace-me: Prerequisite skill/exercise)
-  - (replace-me: Other prerequisites)
+[GitHub](https://en.wikipedia.org/wiki/GitHub) is a cloud-based platform for creating, storing, managing, and sharing text files. These files can be anything from reports and documents, code and scripts, or data files. GitHub has a thriving community that focuses on collaboration, open source, and educational materials.
 
-- **How long**: This exercise takes less than (replace-me: estimated time) to complete.
+- **Who is this for**: People interested in making a easy, pleasant GitHub landing page for their profile.
+- **What you'll learn**: GitHub, Markdown, Basic repository structure
+- **What you'll build**: A personal GitHub Profile for your account
+- **Prerequisites**:
+  - Hopefully, none
+
+- **How long**: This exercise takes less than 1 hour to complete.
 
 In this exercise, you will:
 
-1. (replace-me: Learning objective step #1)
-1. (replace-me: Learning objective step #2)
-1. (replace-me: Learning objective step #N)
-
+1. Create a file
+1. Edit a file with Markdown
+1. Commit the file
+1. See a basic GitHub action in use
 
 ### How to start this exercise
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
 
-<!--  (replace-me: Make sure to edit the URL with proper template_owner, template_name, repo name and description)  -->
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=exercise-template&owner=%40me&name=skills-<replace-me>&description=Exercise:+Replace+me&visibility=public)
+[![start-course](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ccbaumler&template_name=building-a-github-profile&owner=%40me&name=skills-building-a-github-profile&description=My+clone+repository&visibility=public)
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
