@@ -49,5 +49,4 @@ jobs:
           gh issue create \
             --repo "$REPO" \
             --title "$TITLE" \
-            --body-file "$BODY_FILE" \
-            --label "step-0"
+            --body-file "$BODY_FILE" 
