@@ -60,6 +60,7 @@ jobs:
             git push
           else
             echo "❌ Comment does not match 'ready', ignoring"
+          fi
 
       - name: Update to step 1
         uses: ./.github/actions/action-update-step-in-issue
