@@ -50,7 +50,7 @@ jobs:
             
             # Update issue body to Step 1 Markdown
             gh issue edit "${{ github.event.issue.number }}" \
-              --body-file ".github/steps/step-1.md"
+              --body "✅ Learner is ready — advancing to Step 1"
             
             # Update step counter
             echo "1" > .github/steps/-step.txt
