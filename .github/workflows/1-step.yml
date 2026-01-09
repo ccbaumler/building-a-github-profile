@@ -70,8 +70,8 @@ jobs:
             exit 0
           fi
 
-         gh issue comment "1" \
-           --body "✅ Learner is ready — advancing to Step 2"
+          gh issue comment "1" \
+            --body "✅ Learner is ready — advancing to Step 2"
 
           git config user.name github-actions
           git config user.email github-actions@github.com
