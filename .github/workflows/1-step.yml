@@ -53,7 +53,7 @@ jobs:
 
           # Check for inline code
           if ! [[ "$COMMENT" =~ \`[^`]+\` ]]; then
-            MISSING="$MISSING, Inline code (`)"
+            MISSING="$MISSING, Inline code (\`)"
           fi
 
           # Check for emphasis
