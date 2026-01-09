@@ -1,8 +1,8 @@
-## Step 3: (replace-me: STEP-NAME)
+# Step 3: Building a Digital portfolio
 
 (replace-me: OPTIONAL Brief story or scenario to introduce the step)
 
-### 📖 Theory: (replace-me: Theory title)
+### 📖 Theory: What is a GitHub Profile?
 
 <!-- GitHub-styled notifications can be used outside of ordered lists. Available options are: NOTE, IMPORTANT, WARNING, TIP, CAUTION -->
 <!--
@@ -10,9 +10,15 @@
 > (Important note or additional information relevant to this section)
  -->
 
+digital portfolios
+
+markdown
+
+novel features
+
 (replace-me: Optional theory or background information relevant to this step)
 
-### ⌨️ Activity: (replace-me: Activity title)
+### ⌨️ Activity: Create a GitHub Profile!
 
 1. (replace-me: First instruction)
 1. (replace-me: Second instruction)

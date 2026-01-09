@@ -17,15 +17,15 @@ Let's learn `Markdown`, our first new language of the course!
 
 For this step, please navigate to the [Common Mark](https://commonmark.org) and skim the material on the home page.
 
-![common-mark-landing-page](/images/common-mark-landing-page.png)
+![common-mark-landing-page](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/common-mark-landing-page.png?raw=true)
 
 Next, at the top of the page click the `Learn Markdown in 60 seconds` button. This will take you to an thorough overview of the Markdown language.
 
-![common-mark-learning-link](/images/common-mark-learning-link.png)
+![common-mark-learning-link](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/common-mark-learning-link.png?raw=true)
 
 Finally, after reviewing the Markdown language click the `Try our 10 minute Markdown tutorial`.
 
-![common-mark-tutorial-link](/images/common-mark-tutorial-link.png)
+![common-mark-tutorial-link](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/common-mark-tutorial-link.png?raw=true)
 
 Once completed, Comment the formatted text below on this issue to begin ___Step 2___!
 
