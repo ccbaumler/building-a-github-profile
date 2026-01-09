@@ -56,6 +56,7 @@ jobs:
             git config user.email github-actions@github.com
           else
             echo "❌ Comment does not match 'ready', ignoring"
+            exit 0
           fi
 
       - name: Update to step 1
