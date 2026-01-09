@@ -45,6 +45,9 @@ jobs:
 
         run: |
           MISSING=""
+          INLINE_CODE_REGEX='`[^`]+`'
+          EMPHASIS_UNDERSCORE_REGEX='_{2,3}[^_]+_{2,3}'
+          EMPHASIS_ASTERISK_REGEX='\*{2,3}[^\*]+\*{2,3}'
 
           # Check for blockquote
           if ! [[ "$COMMENT" =~ ^\> ]]; then
@@ -52,23 +55,23 @@ jobs:
           fi
 
           # Check for inline code
-          if ! [[ "$COMMENT" =~ \`[^`]+\` ]]; then
-            MISSING="$MISSING, Inline code (\`)"
+          if ! [[ "$COMMENT" =~ $INLINE_CODE_REGEX ]]; then
+            MISSING+=' Inline code (`)'
           fi
 
           # Check for emphasis
-          if ! [[ "$COMMENT" =~ _{2,3}[^_]+_{2,3} || "$COMMENT" =~ \*{2,3}[^_]+\*{2,3} ]]; then
-            MISSING="$MISSING, Emphasis (__, ___) or (**, ***)"
+          if ! [[ "$COMMENT" =~ $EMPHASIS_UNDERSCORE_REGEX || "$COMMENT" =~ $EMPHASIS_ASTERISK_REGEX ]]; then
+            MISSING+=' Emphasis (__, ___) or (**, ***)'
           fi
 
           if [ -n "$MISSING" ]; then
-            gh issue comment "${{ github.event.issue.number }}" \
-              --body "❌ Your Markdown is missing: $MISSING"
+            gh issue comment "1" \
+              --body "❌ Your Markdown is missing:$MISSING"
             exit 0
           fi
 
-          gh issue edit "${{ github.event.issue.number }}" \
-            --body-file "✅ Learner is ready — advancing to Step 2"
+         gh issue comment "1" \
+           --body "✅ Learner is ready — advancing to Step 2"
 
           git config user.name github-actions
           git config user.email github-actions@github.com
