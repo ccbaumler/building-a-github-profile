@@ -44,22 +44,34 @@ jobs:
           COMMENT: ${{ github.event.comment.body }}
 
         run: |
-          COMMENT_LOWER=$(echo "$COMMENT" | tr '[:upper:]' '[:lower:]')
-          if [[ "$COMMENT_LOWER" == "ready" ]]; then
-            echo "✅ Learner is ready — advancing to Step 1"
-            
-            # Update issue body to Step 1 Markdown
-            gh issue edit "${{ github.event.issue.number }}" \
-              --body-file ".github/steps/step-1.md"
-            
-            # Update step counter
-            echo "1" > .github/steps/-step.txt
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git commit -am "Advance to Step 1"
-            git push
-          else
-            echo "❌ Comment does not match 'ready', ignoring"
+          MISSING=""
+
+          # Check for blockquote
+          if ! [[ "$COMMENT" =~ ^\> ]]; then
+            MISSING="$MISSING Blockquote (> )"
+          fi
+
+          # Check for inline code
+          if ! [[ "$COMMENT" =~ \`[^`]+\` ]]; then
+            MISSING="$MISSING, Inline code (`)"
+          fi
+
+          # Check for emphasis
+          if ! [[ "$COMMENT" =~ _{2,3}[^_]+_{2,3} || "$COMMENT" =~ \*{2,3}[^_]+\*{2,3} ]]; then
+            MISSING="$MISSING, Emphasis (__, ___) or (**, ***)"
+          fi
+
+          if [ -n "$MISSING" ]; then
+            gh issue comment "${{ github.event.issue.number }}" \
+              --body "❌ Your Markdown is missing: $MISSING"
+            exit 0
+          fi
+
+          gh issue edit "${{ github.event.issue.number }}" \
+            --body-file "✅ Learner is ready — advancing to Step 2"
+
+          git config user.name github-actions
+          git config user.email github-actions@github.com
 
       - name: Update to step 2
         uses: ./.github/actions/action-update-step-in-issue
