@@ -47,7 +47,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           TITLE="Lets learn markdown!"
-          BODY_FILE=".github/steps/1-step-welcome.md"
+          BODY_FILE=".github/steps/-step-welcome.md"
 
           gh issue create \
             --repo "$REPO" \

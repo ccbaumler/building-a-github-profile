@@ -85,6 +85,6 @@ jobs:
         uses: ./.github/actions/action-update-step-in-issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 2
-          to_step: 3
+          from_step: 1
+          to_step: 2
           issue_number: ${{ github.event.issue.number }}
