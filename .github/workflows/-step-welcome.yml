@@ -47,7 +47,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           TITLE="Lets learn markdown!"
-          BODY_FILE=".github/steps/0-step-welcome.md"
+          BODY_FILE=".github/steps/1-step-welcome.md"
 
           gh issue create \
             --repo "$REPO" \
@@ -59,4 +59,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 0
-          to_step: 1
+          to_step: 0
