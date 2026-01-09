@@ -66,14 +66,14 @@ jobs:
           fi
 
           if [ -n "$MISSING" ]; then
-            gh issue comment "1" \
+            gh issue comment "${{ github.event.issue.number }}" \
               --body "❌ Your Markdown is missing:$MISSING"
 
             echo "ready=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          gh issue comment "1" \
+          gh issue comment "${{ github.event.issue.number }}" \
             --body "✅ Learner is ready — advancing to Step 2"
 
           echo "ready=true" >> "$GITHUB_OUTPUT"
@@ -85,6 +85,6 @@ jobs:
         uses: ./.github/actions/action-update-step-in-issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 1
-          to_step: 2
+          from_step: 2
+          to_step: 3
           issue_number: ${{ github.event.issue.number }}
