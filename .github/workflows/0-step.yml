@@ -49,7 +49,7 @@ jobs:
             echo "✅ Learner is ready — advancing to Step 1"
             
             # Update issue body to Step 1 Markdown
-            gh issue edit "${{ github.event.issue.number }}" \
+            gh issue comment "${{ github.event.issue.number }}" \
               --body "✅ Learner is ready — advancing to Step 1"
             
             # Update step counter
