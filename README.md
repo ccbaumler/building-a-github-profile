@@ -32,7 +32,7 @@ Simply copy the exercise to your account, then give your favorite Octocat (Mona)
 > [!NOTE]
 > Please set the name of the repository to your GitHub user name!!!
 >
-> ![Repository name is user name](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/repo-usename.png?raw=true)
+> ![Repository name is user name](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/repo-username.png?raw=true)
 
 [![start-course](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ccbaumler&template_name=building-a-github-profile&owner=%40me&name=YOUR_OWNER_NAME_HERE_AS_REPO_NAME&description=My+GitHub+Profile+Repository&visibility=public)
 
