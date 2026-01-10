@@ -16,14 +16,26 @@ _Building a GitHub Portfolio in less than an hour._
 
 In this exercise, you will:
 
-1. Create a file
+1. Learn how to copy a github template
+1. Learn about GitHub's Issues tracker
+1. Learn about markup languages
 1. Edit a file with Markdown
 1. Commit the file
-1. See a basic GitHub action in use
+1. Create one element of a digital portfolio (a personalized GitHub Profile)
+1. Experience GitHub actions in use
+1. Optionally, employ simple GitHub actions in custom profile
 
 ### How to start this exercise
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+
+<!--
+> [!NOTE]
+> Please set the name of the repository to your GitHub user name!!!
+>
+> ![Repository name is user name](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/repo-usename.png?raw=true)
+>
+ -->
 
 [![start-course](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ccbaumler&template_name=building-a-github-profile&owner=%40me&name=YOUR_OWNER_NAME_HERE_AS_REPO_NAME&description=My+GitHub+Profile+Repository&visibility=public)
 
