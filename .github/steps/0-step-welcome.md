@@ -12,10 +12,8 @@ Issues filed are typically
 
 ## Activity: Navigate to our first issue!
 
-<!--
 > [!NOTE]
 > Please review the following three steps before moving on!
- -->
 
 1. Click the `Issues` tab.
 
