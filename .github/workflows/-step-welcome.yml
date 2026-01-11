@@ -46,7 +46,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          TITLE="Lets learn markdown!"
+          TITLE="Let's learn markdown!"
           BODY_FILE=".github/steps/-step-welcome.md"
 
           gh issue create \

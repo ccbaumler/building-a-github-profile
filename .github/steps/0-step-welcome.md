@@ -6,11 +6,9 @@ The documentation for this activity will automatically populate mostly in a sing
 
 ## Theory: What is a repository `Issue tracker`?
 
-Across the top of this site there is a row of tabs (`Code`, `Issues`, `Pull Requests`, etc.). The `Issues` tab, or `Issue tracker`, is a place to track various issues for the repository. Anyone with access to the repository is able to read, open, and comment on an issue within a repositories issue tracker.
+Across the top of this site there is a row of tabs (`Code`, `Issues`, `Pull Requests`, etc.). The [`Issues`](../../issues) tab, or `Issue tracker`, is a place to track various issues for the repository. Anyone with access to the repository is able to read, open, and comment on an issue within a repositories issue tracker.
 
-Issues filed are typically
-
-## Activity: Navigate to our first issue!
+## Activity: Navigate GitHub repositories to our first issue!
 
 > [!NOTE]
 > Please review the following three steps before moving on!
