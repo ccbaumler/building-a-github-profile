@@ -18,3 +18,20 @@ Comment `ready` on this issue to begin ***Step 1***!
 
 > [!TIP]
 > Wait about 20 seconds and refresh the page after commenting on this issue...
+
+<details>
+<summary>Having trouble? 🤷</summary><br/>
+
+If the bot responds with:
+
+❌ Comment does not match 'ready', ignoring
+
+- Try being precise, just like our other naming conventions discussed in class.
+
+If the bot hasn't responded in 20 seconds, please check the [Actions](../../actions) tab.
+
+- Check to see if a job is running. Sometimes it simply takes a bit longer.
+
+- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
+
+</details>

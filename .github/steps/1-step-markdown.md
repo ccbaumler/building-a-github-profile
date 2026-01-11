@@ -37,11 +37,21 @@ Once completed, Correctly comment the markup-formatted text below on this issue 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
+If the bot responds with:
+
+❌ Your Markdown is missing:$MISSING
+
 Use the `Preview` tab of the comment to see the formatted markdown. Make it match this formatting exactly:
 > Go `forth` and write ___beautiful___ text!
 
 ![comment-preview](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/comment-preview.png?raw=true)
 
 ![comment-write](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/comment-write.png?raw=true)
+
+If the bot hasn't responded in 20 seconds, please check the [Actions](../../actions) tab.
+
+- Check to see if a job is running. Sometimes it simply takes a bit longer.
+
+- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
 
 </details>

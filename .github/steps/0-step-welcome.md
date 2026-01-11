@@ -24,3 +24,17 @@ Across the top of this site there is a row of tabs (`Code`, `Issues`, `Pull Requ
 3. You will see this issue created by the github-actions bot.
 
 ![image of the issue](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/issue-text.png?raw=true)
+
+> [!TIP]
+> Wait about 20 seconds and refresh the page after commenting on this issue...
+
+<details>
+<summary>Having trouble? 🤷</summary><br/>
+
+If the issue isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
+
+- Check to see if a job is running. Sometimes it simply takes a bit longer.
+
+- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
+
+</details>
