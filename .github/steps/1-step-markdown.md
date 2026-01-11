@@ -8,12 +8,15 @@ Let's learn `Markdown`, our first new language of the course!
 
 1. creating future-proof, universal documentation,
 2. rapidly generating file types like PDF, HTML, DOCX, LaTeX, or even slide files (revealjs),
-3. low friction writing without the distractions of a mouse or GUI,
+3. low friction writing without the distractions of a mouse, GUI, or more complex programming behavior,
 4. the source files (.md) are human-readable unlike more complex markup languages like HTML or LaTeX.
 
-(replace-me: Optional theory or background information relevant to this step)
-
 ## ⌨️ Activity: Learning Markdown!
+
+> [!NOTE]
+> Please review the following steps before moving on.
+>
+> But! This issue's content is persistant. You can always come back to this later if you navigate away.
 
 For this step, please navigate to the [Common Mark](https://commonmark.org) and skim the material on the home page.
 
@@ -27,14 +30,18 @@ Finally, after reviewing the Markdown language click the `Try our 10 minute Mark
 
 ![common-mark-tutorial-link](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/common-mark-tutorial-link.png?raw=true)
 
-Once completed, Comment the formatted text below on this issue to begin ___Step 2___!
+Once completed, Correctly comment the markup-formatted text below on this issue to begin ___Step 2___!
 
 > Go `forth` and write ___beautiful___ text!
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-- (replace-me: Troubleshooting tip or hint)
-- (replace-me: Additional troubleshooting tips as needed)
+Use the `Preview` tab of the comment to see the formatted markdown. Make it match this formatting exactly:
+> Go `forth` and write ___beautiful___ text!
+
+![comment-preview](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/comment-preview.png?raw=true)
+
+![comment-write](https://github.com/ccbaumler/building-a-github-profile/blob/main/images/comment-write.png?raw=true)
 
 </details>
