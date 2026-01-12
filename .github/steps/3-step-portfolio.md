@@ -1,4 +1,4 @@
-# Step 3: Building a Digital portfolio
+# Step 2: Building a Digital portfolio
 
 (replace-me: OPTIONAL Brief story or scenario to introduce the step)
 
@@ -23,6 +23,8 @@ novel features
 1. (replace-me: First instruction)
 1. (replace-me: Second instruction)
 1. (replace-me: Additional instructions as needed)
+
+write a list with markdown of digital portfolio items you would like to create!
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

@@ -1,4 +1,4 @@
-name: Step 1 – Unlock Markdown challenge
+name: Step 3 – Unlock GitHub Profile challenge
 
 on:
   workflow_dispatch:
@@ -22,13 +22,13 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  check_step_1:
+  check_step_3:
     name: Check user markdown comment
     needs: get_current_step
 
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 1 }}
+          && needs.get_current_step.outputs.current_step == 3 }}
 
     runs-on: ubuntu-latest
 
@@ -45,24 +45,10 @@ jobs:
           COMMENT: ${{ github.event.comment.body }}
 
         run: |
-          MISSING=""
-          INLINE_CODE_REGEX='`[^`]+`'
-          EMPHASIS_UNDERSCORE_REGEX='_{2,3}[^_]+_{2,3}'
-          EMPHASIS_ASTERISK_REGEX='\*{2,3}[^\*]+\*{2,3}'
+          LIST_3_REGEX='((^|\n)[[:space:]]*[-+*][[:space:]]+.+(\n[[:space:]]*[-+*][[:space:]]+.+){2,})|((^|\n)[[:space:]]*[0-9]+[.)][[:space:]]+.+(\n[[:space:]]*[0-9]+[.)][[:space:]]+.+){2,})'
 
-          # Check for blockquote
-          if ! [[ "$COMMENT" =~ ^\> ]]; then
-            MISSING="$MISSING Blockquote (> )"
-          fi
-
-          # Check for inline code
-          if ! [[ "$COMMENT" =~ $INLINE_CODE_REGEX ]]; then
-            MISSING+=' Inline code (`)'
-          fi
-
-          # Check for emphasis
-          if ! [[ "$COMMENT" =~ $EMPHASIS_UNDERSCORE_REGEX || "$COMMENT" =~ $EMPHASIS_ASTERISK_REGEX ]]; then
-            MISSING+=' Emphasis (__, ___) or (**, ***)'
+          if ! [[ "$COMMENT" =~ $LIST_3_REGEX ]]; then
+            MISSING+=' 3 Element List: (-, *, +, or 1)'
           fi
 
           if [ -n "$MISSING" ]; then
@@ -74,17 +60,17 @@ jobs:
           fi
 
           gh issue comment "${{ github.event.issue.number }}" \
-            --body "✅ Learner is ready — advancing to Step 2"
+            --body "✅ Learner is ready — advancing to Step 4"
 
           echo "ready=true" >> "$GITHUB_OUTPUT"
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-      - name: Update to step 2
+      - name: Update to step 4
         if: steps.check_ready.outputs.ready == 'true'
         uses: ./.github/actions/action-update-step-in-issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 1
-          to_step: 2
+          from_step: 3
+          to_step: 4
           issue_number: ${{ github.event.issue.number }}

@@ -22,14 +22,16 @@ local
 
 github
 
-
-(replace-me: Optional theory or background information relevant to this step)
-
 ## ⌨️ Activity: Create a README.md file!
 
 1. (replace-me: First instruction)
 1. (replace-me: Second instruction)
 1. (replace-me: Additional instructions as needed)
+
+
+Create README.md file in repository root
+
+write a comment that links to the readme.md file in root
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
