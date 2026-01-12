@@ -44,24 +44,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check README.md exists in root
-        id: check_readme
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          COMMENT: ${{ github.event.comment.body }}
-
-        run: |
-          if [ ! -f README.md ]; then
-            gh issue comment "${{ github.event.issue.number }}" \
-              --body "❌ Your README.md file is missing"
-
-            echo "❌ README.md not found in repository root"
-
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
       - name: Check documentation challenge
         id: check_ready
         env:
@@ -84,6 +66,17 @@ jobs:
             echo "ready=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+
+          if [ ! -f README.md ]; then
+            gh issue comment "${{ github.event.issue.number }}" \
+              --body "❌ Your README.md file is missing"
+
+            echo "❌ README.md not found in repository root"
+
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
 
           gh issue comment "${{ github.event.issue.number }}" \
             --body "✅ Learner is ready — advancing to Step 3"
