@@ -67,7 +67,7 @@ jobs:
 
         run: |
           MISSING=""
-          LINK_REGEX='\[+\]\(+\)'
+          LINK_REGEX='\[[^]]+\]\([^)]+\)'
 
           if ! [[ "$COMMENT" =~ $LINK_REGEX ]]; then
             MISSING="$MISSING Link []()"

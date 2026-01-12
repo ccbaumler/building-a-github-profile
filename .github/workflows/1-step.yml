@@ -80,6 +80,18 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
+      - name: Remove README.md from root
+        if: steps.check_ready.outputs.ready == 'true'
+        run: |
+          if [ -f README.md ]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+      
+            git rm README.md
+            git commit -m "Remove README.md after completing step 1"
+            git push
+          fi
+
       - name: Update to step 2
         if: steps.check_ready.outputs.ready == 'true'
         uses: ./.github/actions/action-update-step-in-issue

@@ -28,6 +28,7 @@ github
 1. (replace-me: Second instruction)
 1. (replace-me: Additional instructions as needed)
 
+I have lovingly removed the README file that existed in this repo... You're welcome!
 
 Create README.md file in repository root
 
