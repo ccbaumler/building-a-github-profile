@@ -45,7 +45,7 @@ jobs:
           COMMENT: ${{ github.event.comment.body }}
 
         run: |
-          LIST_3_REGEX='((^|\n)[[:space:]]*[-+*][[:space:]]+.+(\n[[:space:]]*[-+*][[:space:]]+.+){2,})|((^|\n)[[:space:]]*[0-9]+[.)][[:space:]]+.+(\n[[:space:]]*[0-9]+[.)][[:space:]]+.+){2,})'
+          LIST_3_REGEX='((^)([-+*]|[0-9]+[.)]).*[\n]?){3,}'
 
           if ! [[ "$COMMENT" =~ $LIST_3_REGEX ]]; then
             MISSING+=' 3 Element List: (-, *, +, or 1)'
