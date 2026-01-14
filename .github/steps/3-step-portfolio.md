@@ -1,30 +1,19 @@
 # Step 2: Building a Digital portfolio
 
-(replace-me: OPTIONAL Brief story or scenario to introduce the step)
+A digital portfolio is a collection of materials organized and maintained by the user to showcase their breadth and depth of knowledge. This portfolio should highlight not only their technical skills, but their other pursuits. From music and art to teaching and course design. A digital portfolio allows a user to define their digital presence and leverage their skills to highlight their interests and aptitudes!
 
-### 📖 Theory: What is a GitHub Profile?
+GitHub is well integrated into the open-source software culture. Having a profile easily found and well-maintained on GitHub is an excellent way to begin highlighting interesting projects you are maintaining, contributating to, or developing yourself.
 
-<!-- GitHub-styled notifications can be used outside of ordered lists. Available options are: NOTE, IMPORTANT, WARNING, TIP, CAUTION -->
-<!--
-> [!NOTE]
-> (Important note or additional information relevant to this section)
- -->
+## 📖 Theory: What is a personalized GitHub Profile?
 
-digital portfolios
-
-markdown
-
-novel features
-
-(replace-me: Optional theory or background information relevant to this step)
+https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile
+https://docs.github.com/en/account-and-profile/tutorials/using-your-github-profile-to-enhance-your-resume
 
 ### ⌨️ Activity: Create a GitHub Profile!
 
-1. (replace-me: First instruction)
-1. (replace-me: Second instruction)
-1. (replace-me: Additional instructions as needed)
+This is the moment where everything comes together! Using your newly earned skills in Markdown and GitHub, please finalize your personal GitHub Profile.
 
-write a list with markdown of digital portfolio items you would like to create!
+To complete this assessment, write a Markdown list of digital portfolio items you would like to create! (at least three items in the list)
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
