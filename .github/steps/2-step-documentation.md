@@ -31,7 +31,7 @@ A simple landscape of project documentation:
 
 ## ⌨️ Activity: Create a README.md file!
 
-This README file is unique to your GitHub Profile page. What is written in this repo will populate on the landing page of your GitHub Profile. Think of it as a README for you! Use it as an introduction and overview of you.
+This README file is unique to your GitHub Profile page. What is written in this repo will populate on the landing page of your GitHub Profile. Think of it as a README for you! Use it as an introduction and overview of you. [Here is my profile page as an example](https://github.com/ccbaumler/ccbaumler).
 
 On that note, I have lovingly removed the README file that existed in this repo. You now have a void to fill... You're welcome! 
 
